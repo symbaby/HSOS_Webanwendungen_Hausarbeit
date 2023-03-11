@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>confirm-offer</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="transaction">
+    <div>
+      <img [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + this.offer.offeredPokemonId + '.png'" alt="" width="200px"/>
+    </div>
+    <div>
+      <p> >>>>>>>>>>>>>>>> </p>
+      <p> <<<<<<<<<<<<<<<< </p>
+    </div>
+    <div>
+      <img [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + this.offer.acceptablePokemonId + '.png'" alt="" width="200px"/>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <ion-button color="medium" (click)="completeTrade()">Confirm</ion-button>
+    <ion-button color="medium" (click)="dismissModal()">Cancel</ion-button>
+
+  </div>
+
+</ion-content>

@@ -1,0 +1,22 @@
+<ion-header [translucent]="true" class="pokedexHeader">
+  <ion-toolbar>
+    <ion-title>
+      Pokedex
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="pokedexBody">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 1</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ng-container *ngIf="pokemonWithLinkList">
+    <app-pokemon-card *ngFor="let pokemon of pokemonWithLinkList" [id]='pokemon.pokemonId' [url]='pokemon.url'></app-pokemon-card>
+  </ng-container>
+
+
+</ion-content>

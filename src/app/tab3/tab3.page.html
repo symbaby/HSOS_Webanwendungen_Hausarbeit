@@ -1,0 +1,29 @@
+<ion-header [translucent]="true" class="shopHeader">
+  <ion-toolbar>
+    <ion-title>
+      Shop
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="shopBody">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 3</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ng-container *ngIf="principal">
+          <ion-text class="ion-float-right">COINS: {{this.principal.coinAmount}}</ion-text>
+        </ng-container>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <app-booster-pack></app-booster-pack>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

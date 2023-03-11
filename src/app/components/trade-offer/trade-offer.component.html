@@ -1,0 +1,62 @@
+<ion-card>
+  <ion-card-content>
+    <div class="card-body">
+      <div class="card-element card-element-left" id="offeredPokemon">
+        <div class="pokemonText">
+          <ng-container *ngIf="offerFullDTO">
+            <ion-card-title>#{{this.offerFullDTO.offeredPokemonId}}</ion-card-title>
+          </ng-container>
+
+        </div>
+        <div>
+          <ng-container *ngIf="offerFullDTO.offeredPokemonId">
+            <img
+              [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + this.offerFullDTO.offeredPokemonId + '.png'"
+              alt=""/>
+          </ng-container>
+        </div>
+        <div class="pokemonText">
+          <ng-container *ngIf="offeredPokemon">
+            <ion-card-title>{{this.offeredPokemon.name}}</ion-card-title>
+          </ng-container>
+        </div>
+      </div>
+
+
+      <div class="card-element card-element-center" id="acceptedPokemon">
+        <div class="pokemonText">
+          <ng-container *ngIf="offerFullDTO">
+            <ion-card-title>#{{this.offerFullDTO.acceptablePokemonId}}</ion-card-title>
+          </ng-container>
+
+        </div>
+        <div>
+          <ng-container *ngIf="offerFullDTO.offeredPokemonId">
+            <img
+              [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + this.offerFullDTO.acceptablePokemonId + '.png'"
+              alt=""/>
+          </ng-container>
+        </div>
+
+        <div class="pokemonText">
+          <ng-container *ngIf="acceptedPokemon">
+            <ion-card-title>{{this.acceptedPokemon.name}}</ion-card-title>
+          </ng-container>
+        </div>
+      </div>
+
+
+      <div class="card-element card-element-right" id="confirmButton">
+        <ng-container *ngIf="isObtained">
+          <ion-button color="success" (click)="openModal(this.offerFullDTO, this.offeredPokemon, this.acceptedPokemon)">Trade</ion-button>
+        </ng-container>
+
+        <ng-container *ngIf="!isObtained">
+          <ion-button disabled="true" color="dark">Trade</ion-button>
+        </ng-container>
+      </div>
+
+    </div>
+
+  </ion-card-content>
+</ion-card>

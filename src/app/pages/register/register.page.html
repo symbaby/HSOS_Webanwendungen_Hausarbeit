@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Register
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #registerForm="ngForm" (ngSubmit)="register()">
+    <ion-list>
+
+      <ion-item>
+        <ion-label position="stacked">Username</ion-label>
+        <ion-input name="username" type="text" required [(ngModel)]="username"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Password</ion-label>
+        <ion-input name="password" type="password" required [(ngModel)]="password"></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <ion-button type="submit" [disabled]="!registerForm.valid">Register</ion-button>
+  </form>
+</ion-content>

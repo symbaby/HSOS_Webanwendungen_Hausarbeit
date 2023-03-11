@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>my-trade-offers</ion-title>
+    <ion-button (click)="backToMenu() " color="danger" class="ButtonOffers">Back to menu</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ng-container *ngIf="myTradeOffers">
+    <app-my-trade-offer *ngFor="let trade of myTradeOffers" [offerId]="trade.tradeId" [offerUrl]='trade.url'></app-my-trade-offer>
+  </ng-container>
+
+
+  <div class="footer">
+    <ion-fab>
+      <ion-fab-button size="large" (click)="openModal()">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
+</ion-content>

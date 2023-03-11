@@ -1,0 +1,115 @@
+$grassType: #78c850;
+$fireType: #f08030;
+$waterType: #6890f0;
+$bugType: #a8b820;
+$normalType: #a8a878;
+$poisonType: #a040a0;
+$electricType: #f8d030;
+$groundType: #e0c068;
+$fairyType: #ee99ac;
+$fightingType: #c03028;
+$psychicType: #f85888;
+$rockType: #b8a038;
+$ghostType: #705898;
+$iceType: #98d8d8;
+$dragonType: #7038f8;
+$darkType: #705848;
+$steelType: #b8b8d0;
+$flyingType: #a890f0;
+
+$PokemonCardBorderColor: #ffd900;
+
+.bodyContent{
+  float: left;
+  display: inline;
+}
+
+.Card {
+  height: 250px;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  overflow: hidden;
+  max-width: 250px;
+  margin: 30px;
+}
+
+.pokeText {
+  background-color: $PokemonCardBorderColor;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+}
+
+.statList{
+  float: left;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.CardContent {
+  border-radius: 15px;
+  background: linear-gradient($grassType, $poisonType);
+  border: 8px solid $PokemonCardBorderColor;
+}
+
+.ImageHolder img {
+  width: 220px;
+  height: 233px;
+}
+
+img{
+  //filter: brightness(0%);
+}
+
+.primaryType, .secondaryType {
+  margin-left: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2em;
+  color: white;
+  margin-top: 0px;
+}
+
+
+ion-card-content {
+  display: flex;
+  float: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+ion-card-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  padding:0 ;
+}
+
+ng-container {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+
+}
+
+
+ion-card-content{
+  position: relative;
+  margin-left: 30px;
+}
+
+.onlyPrimary{
+  margin-left: 43px;
+}
+
+ion-card {
+  max-height: 140px;
+}
+
+ion-card-header {
+  height: 50px;
+  margin: 0;
+}

@@ -1,0 +1,60 @@
+$PokemonCardBorderColor: #ffd900;
+
+ion-card{
+  background-color: $PokemonCardBorderColor;
+}
+
+
+.card-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-element {
+  padding: 10px;
+}
+
+.card-element-left {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-element-center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-element-right {
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+
+ion-card-title {
+  font-size: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+
+ion-button {
+  width: 270px;
+  height: 100px;
+  background-color: #2396F3;
+  font-size: 30px;
+  color: #fff;
+  border-radius: 10px;
+}

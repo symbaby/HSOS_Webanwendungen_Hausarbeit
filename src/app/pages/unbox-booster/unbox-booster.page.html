@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>UnboxBooster</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ng-container *ngIf="boosterPackDTO">
+    <app-unbox-pokemon-card *ngFor="let number of boosterPackDTO.pokemonIdList" [id]='number' ></app-unbox-pokemon-card>
+  </ng-container>
+
+  <div class="Exit">
+    <ion-button class="ion-color-danger" (click)="backToMenu()">
+      Back to Menu
+    </ion-button>
+  </div>
+
+</ion-content>

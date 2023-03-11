@@ -1,0 +1,81 @@
+<div class="bodyContent">
+
+  <div class="Card" data-tilt>
+
+    <ng-container *ngIf="this.pokemon.pokemonType">
+
+      <ng-container *ngIf="this.pokemon.pokemonType.primaryType && this.pokemon.pokemonType.secondaryType">
+        <div class="CardContent"
+             [ngStyle]="{'background': 'linear-gradient(' + this.primaryBackgroundColor + ','+this.secondaryBackgroundColor +')'}"
+             (click)="openModal(id, isFavorite, pokemon)">
+          <div class="ImageHolder">
+            <img src="{{this.pokemon.imageUri}}" alt="" [ngStyle]="{'filter': 'brightness(' + this.brightness + ')'}">
+          </div>
+        </div>
+      </ng-container>
+
+
+      <ng-container *ngIf="this.pokemon.pokemonType.primaryType && !this.pokemon.pokemonType.secondaryType">
+        <div class="CardContent"
+             [ngStyle]="{'background': 'linear-gradient(' + this.primaryBackgroundColor + ','+this.primaryBackgroundColor +')'}"
+             (click)="openModal(id, isFavorite, pokemon)">
+          <div class="ImageHolder">
+            <img src="{{this.pokemon.imageUri}}" alt="" [ngStyle]="{'filter': 'brightness(' + this.brightness + ')'}">
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
+
+
+  <ion-card class="pokeText">
+    <ion-card-header>
+
+      <ng-container *ngIf="this.pokemonExistDTO">
+        <ion-card-title><b>#{{this.id.toString()}}</b></ion-card-title>
+        <ion-card-title><b>{{this.pokemon.name | uppercase}}</b></ion-card-title>
+      </ng-container>
+
+      <ng-container *ngIf="!this.pokemonExistDTO">
+        <ion-card-title><b>#{{this.id.toString()}}</b></ion-card-title>
+        <ion-card-title><b>???</b></ion-card-title>
+      </ng-container>
+
+      <div class="statList">
+        <ng-container *ngIf="this.pokemon.pokemonType">
+          <ng-container *ngIf="this.pokemon.pokemonType.primaryType && this.pokemon.pokemonType.secondaryType">
+            <div class="primaryAndSecondary">
+              <ion-card-content>
+                <div class="primaryType" [ngStyle]="{'background-color': primaryBackgroundColor}">
+                  {{this.pokemon.pokemonType.primaryType}}
+                </div>
+                <div class="secondaryType" [ngStyle]="{'background-color': secondaryBackgroundColor}">
+                  {{this.pokemon.pokemonType.secondaryType}}
+                </div>
+
+                <ng-container *ngIf="pokemonExistDTO">
+                  <h1>x{{this.pokemonExistDTO.amount}}</h1>
+                </ng-container>
+              </ion-card-content>
+
+            </div>
+          </ng-container>
+          <ng-container *ngIf="this.pokemon.pokemonType.primaryType && ! this.pokemon.pokemonType.secondaryType">
+            <div class="onlyPrimary">
+              <ion-card-content>
+                <div class="primaryType" [ngStyle]="{'background-color': primaryBackgroundColor}">
+                  {{this.pokemon.pokemonType.primaryType}}
+                </div>
+
+                <ng-container *ngIf="pokemonExistDTO">
+                  <h1>x{{this.pokemonExistDTO.amount}}</h1>
+                </ng-container>
+
+              </ion-card-content>
+            </div>
+          </ng-container>
+        </ng-container>
+      </div>
+    </ion-card-header>
+  </ion-card>
+</div>

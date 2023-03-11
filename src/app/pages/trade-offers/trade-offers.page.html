@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>trade-offers</ion-title>
+    <ion-button (click)="backToMenu() " color="danger" class="ButtonOffers">Back to menu</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ng-container *ngIf="otherTradeOffers">
+    <app-trade-offer *ngFor="let trade of otherTradeOffers" [offerId]="trade.tradeId" [offerUrl]='trade.url'></app-trade-offer>
+  </ng-container>
+</ion-content>

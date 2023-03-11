@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Choose Your Pokemon</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card class="ModalText">
+    <!-- We use the external API directly instead of our backend :) -->
+    <img [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + id + '.png'" alt=""/>
+    <ion-card-header>
+      <ion-card-title>{{pokemon.name | uppercase}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+
+      <ng-container *ngIf="pokemon.pokemonType.primaryType && pokemon.pokemonType.secondaryType">
+        Type: {{pokemon.pokemonType.primaryType | uppercase}}/{{pokemon.pokemonType.secondaryType | uppercase}}
+      </ng-container>
+
+      <ng-container *ngIf="pokemon.pokemonType.primaryType && !pokemon.pokemonType.secondaryType">
+        Type: {{pokemon.pokemonType.primaryType | uppercase}}
+      </ng-container>
+
+    </ion-card-content>
+  </ion-card>
+
+  <div class="ModalButtonList">
+    <ng-container *ngIf="isFavorite">
+      <ion-button color="success" (click)="removeFavorite()">Remove Favorite</ion-button>
+    </ng-container>
+
+    <ng-container *ngIf="!isFavorite">
+      <ion-button color="success" (click)="setFavorite()">Set Favorite</ion-button>
+    </ng-container>
+
+    <ion-button color="medium" (click)="dismissModal()">Cancel</ion-button>
+  </div>
+</ion-content>

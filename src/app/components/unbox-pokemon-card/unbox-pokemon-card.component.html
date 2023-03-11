@@ -1,0 +1,25 @@
+<div class="bodyContent">
+
+  <div class="Card" data-tilt>
+
+    <ng-container *ngIf="this.pokemon.pokemonType">
+
+      <ng-container *ngIf="this.pokemon.pokemonType.primaryType && this.pokemon.pokemonType.secondaryType">
+        <div class="CardContent" [ngStyle]="{ 'background': 'linear-gradient(' + this.primaryBackgroundColor + ',' + this.primaryBackgroundColor + ')','filter': 'brightness(' + this.backgroundBrightness + ')'}">
+          <div class="ImageHolder" (click)="reveal()">
+            <img src="{{this.pokemon.imageUri}}" [ngStyle]="{'filter': 'brightness(' + this.brightness + ')'}" alt="">
+          </div>
+        </div>
+      </ng-container>
+
+
+      <ng-container *ngIf="this.pokemon.pokemonType.primaryType && !this.pokemon.pokemonType.secondaryType">
+        <div class="CardContent" [ngStyle]="{ 'background': 'linear-gradient(' + this.primaryBackgroundColor + ',' + this.primaryBackgroundColor + ')','filter': 'brightness(' + this.backgroundBrightness + ')'}">
+          <div class="ImageHolder" (click)="reveal()">
+            <img src="{{this.pokemon.imageUri}}" [ngStyle]="{'filter': 'brightness(' + this.brightness + ')'}" alt="">
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>
